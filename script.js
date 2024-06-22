@@ -1,0 +1,25 @@
+var flag =0;
+document.querySelector("#menu").addEventListener("click",()=>{
+    if(flag===0)
+    {
+        document.querySelector("#menu").style.gap="0"
+        document.querySelector("#line1").style.rotate="45deg"
+        document.querySelector("#line2").style.rotate="-45deg"
+        flag=1;
+        gsap.to("#popup",{
+            right:0,
+            duration:.5
+        })
+    }
+    else
+    {
+        document.querySelector("#menu").style.gap="10px"
+        document.querySelector("#line1").style.rotate="0deg"
+        document.querySelector("#line2").style.rotate="0deg"
+        flag=0;
+        gsap.to("#popup",{
+            right:"-100vw",
+            duration:.5
+        })
+    }
+})
